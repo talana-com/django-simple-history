@@ -46,11 +46,12 @@ def _default_get_user(request, **kwargs):
 def _history_user_getter(historical_instance):
     if historical_instance.history_user_id is None:
         return None
-    User = get_user_model()
-    try:
-        return User.objects.get(pk=historical_instance.history_user_id)
-    except User.DoesNotExist:
-        return None
+
+    # User = get_user_model()
+    # try:
+    #     return User.objects.get(pk=historical_instance.history_user_id)
+    # except User.DoesNotExist:
+    #     return None
 
 
 def _history_user_setter(historical_instance, user):
